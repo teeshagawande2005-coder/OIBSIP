@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Temperature Converter</title>
+    <title>Advanced Calculator</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -21,18 +21,18 @@
             min-height: 100vh;
             color: #333;
         }
-        .container {
+        .calculator {
             background: white;
-            padding: 50px;
+            padding: 30px;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+            max-width: 450px;
             width: 100%;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
-        .container::before {
+        .calculator::before {
             content: '';
             position: absolute;
             top: 0;
@@ -42,189 +42,188 @@
             background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800);
         }
         h1 {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #4CAF50;
             font-weight: 300;
-            font-size: 2.5em;
+            font-size: 2em;
         }
-        .input-group {
-            margin-bottom: 30px;
+        .display {
+            background: #f9f9f9;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 500;
+            text-align: right;
+            min-height: 50px;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
+            align-items: center;
+            justify-content: flex-end;
+            overflow: hidden;
         }
-        .input-wrapper {
-            position: relative;
-        }
-        input {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 18px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        input:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
-        }
-        .input-wrapper i {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #aaa;
-        }
-        select {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 18px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-        }
-        select:focus {
-            outline: none;
-            border-color: #4CAF50;
-            box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
         }
         button {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: white;
+            background: #f0f0f0;
             border: none;
-            padding: 18px;
             border-radius: 12px;
-            font-size: 18px;
+            padding: 18px;
+            font-size: 16px;
             font-weight: 500;
             cursor: pointer;
-            width: 100%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         button:hover {
+            background: #e0e0e0;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
         button:active {
             transform: translateY(0);
         }
-        #result {
-            margin-top: 40px;
-            opacity: 0;
-            transition: opacity 0.5s ease;
+        .operator {
+            background: #4CAF50;
+            color: white;
         }
-        #result.show {
-            opacity: 1;
+        .operator:hover {
+            background: #45a049;
         }
-        .result-item {
-            background: #f9f9f9;
-            padding: 30px;
-            margin: 10px 0;
-            border-radius: 15px;
-            border-left: 5px solid #4CAF50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 28px;
-            font-weight: 500;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        .clear {
+            background: #f44336;
+            color: white;
         }
-        .result-item i {
-            color: #4CAF50;
-            font-size: 32px;
-            margin-right: 20px;
+        .clear:hover {
+            background: #d32f2f;
         }
-        .error {
-            color: #f44336;
-            font-weight: 500;
-            margin-top: 20px;
+        .equals {
+            background: #2196F3;
+            color: white;
+            grid-column: span 2;
+        }
+        .equals:hover {
+            background: #1976D2;
+        }
+        .zero {
+            grid-column: span 2;
+        }
+        .special {
+            background: #FF9800;
+            color: white;
+        }
+        .special:hover {
+            background: #F57C00;
         }
         .footer {
-            margin-top: 40px;
+            margin-top: 30px;
             font-size: 14px;
             color: #777;
         }
-        @media (max-width: 768px) {
-            .container {
-                padding: 30px;
+        @media (max-width: 480px) {
+            .calculator {
+                padding: 20px;
                 margin: 20px;
             }
             h1 {
-                font-size: 2em;
+                font-size: 1.5em;
+            }
+            .display {
+                font-size: 20px;
+                padding: 15px;
+            }
+            button {
+                padding: 12px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1><i class="fas fa-thermometer-half"></i> Temperature Converter</h1>
-        <div class="input-group">
-            <div class="input-wrapper">
-                <input type="number" id="tempInput" placeholder="Enter temperature in Celsius (e.g., 25)" step="any">
-                <i class="fas fa-temperature-high"></i>
-            </div>
-            <select id="toUnit">
-                <option value="C"> Celsius (°C)</option>
-                <option value="F"> Fahrenheit (°F)</option>
-                <option value="K"> Kelvin (K)</option>
-            </select>
+    <div class="calculator">
+        <h1><i class="fas fa-calculator"></i> Advanced Calculator</h1>
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="clear" id="clear">AC</button>
+            <button class="special" id="backspace"><i class="fas fa-backspace"></i></button>
+            <button class="special" id="percent">%</button>
+            <button class="special" id="sqrt">√</button>
+            <button class="operator" id="divide">/</button>
+            <button id="seven">7</button>
+            <button id="eight">8</button>
+            <button id="nine">9</button>
+            <button class="operator" id="multiply">*</button>
+            <button class="special" id="openParen">(</button>
+            <button id="four">4</button>
+            <button id="five">5</button>
+            <button id="six">6</button>
+            <button class="operator" id="subtract">-</button>
+            <button class="special" id="closeParen">)</button>
+            <button id="one">1</button>
+            <button id="two">2</button>
+            <button id="three">3</button>
+            <button class="operator" id="add">+</button>
+            <button class="equals" id="equals">=</button>
+            <button class="zero" id="zero">0</button>
+            <button id="decimal">.</button>
         </div>
-        <button id="convertBtn"><i class="fas fa-exchange-alt"></i> Convert</button>
-        <div id="result"></div>
         <div class="footer">
-            <p>Accurate conversions for scientific and everyday use.</p>
+            <p>Perform advanced calculations with ease.</p>
         </div>
     </div>
 
     <script>
-        document.getElementById('convertBtn').addEventListener('click', function() {
-            const tempInput = document.getElementById('tempInput').value;
-            const toUnit = document.getElementById('toUnit').value;
-            const resultDiv = document.getElementById('result');
+        let display = document.getElementById('display');
+        let currentInput = '0';
+        let expression = '';
 
-            // Clear previous results
-            resultDiv.classList.remove('show');
-            resultDiv.innerHTML = '';
+        // Function to update display
+        function updateDisplay() {
+            display.textContent = currentInput;
+        }
 
-            // Validate input
-            if (isNaN(tempInput) || tempInput === '') {
-                resultDiv.innerHTML = '<div class="error"><i class="fas fa-exclamation-triangle"></i> Please enter a valid number.</div>';
-                resultDiv.classList.add('show');
-                return;
+        // Function to handle button clicks
+        function handleButton(value) {
+            if (value === 'AC') {
+                currentInput = '0';
+                expression = '';
+            } else if (value === '<i class="fas fa-backspace"></i>') {
+                currentInput = currentInput.slice(0, -1);
+                if (currentInput === '') currentInput = '0';
+            } else if (value === '=') {
+                try {
+                    // Replace √ with Math.sqrt
+                    let expr = expression + currentInput;
+                    expr = expr.replace(/√/g, 'Math.sqrt');
+                    expr = expr.replace(/%/g, '/100');
+                    currentInput = eval(expr).toString();
+                    expression = '';
+                } catch {
+                    currentInput = 'Error';
+                }
+            } else {
+                if (currentInput === '0' && !isNaN(value)) {
+                    currentInput = value;
+                } else {
+                    currentInput += value;
+                }
+                if (['+', '-', '*', '/', '%', '√', '(', ')'].includes(value)) {
+                    expression += currentInput.slice(0, -1) + value;
+                    currentInput = '';
+                }
             }
+            updateDisplay();
+        }
 
-            const temp = parseFloat(tempInput); // Input is always in Celsius
-            let convertedTemp, unitName, symbol, icon;
-
-            // Convert from Celsius to selected unit
-            if (toUnit === 'C') {
-                convertedTemp = temp;
-                unitName = 'Celsius';
-                symbol = '°C';
-                icon = 'fas fa-thermometer-half';
-            } else if (toUnit === 'F') {
-                convertedTemp = (temp * 9 / 5) + 32;
-                unitName = 'Fahrenheit';
-                symbol = '°F';
-                icon = 'fas fa-sun';
-            } else if (toUnit === 'K') {
-                convertedTemp = temp + 273.15;
-                unitName = 'Kelvin';
-                symbol = 'K';
-                icon = 'fas fa-snowflake';
-            }
-
-            // Display only the selected result
-            resultDiv.innerHTML = `
-                <div class="result-item">
-                    <i class="${icon}"></i>
-                    <span>${unitName}: ${convertedTemp.toFixed(2)} ${symbol}</span>
-                </div>
-            `;
-            resultDiv.classList.add('show');
+        // Event listeners for all buttons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                handleButton(button.textContent || button.innerHTML);
+            });
         });
     </script>
 </body>
