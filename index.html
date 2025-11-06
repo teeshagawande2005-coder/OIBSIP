@@ -4,62 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tribute to [Person's Name]</title>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <title>To-Do List Web App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Header -->
     <header>
-        <h1>Tribute to Steve Jobs</h1>
-        <p>Celebrating the life and achievements of someone truly inspiring</p>
+        <h1>To-Do List Web App</h1>
     </header>
-
-    <!-- Image Gallery -->
-    <section class="gallery">
-        <div class="img-card">
-            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
-            <p>At an event in 2023</p>
+    <div class="container">
+        <!-- Input Panel -->
+        <div class="input-panel">
+            <form id="taskForm">
+                <input type="text" id="title" placeholder="Title" required>
+                <textarea id="description" placeholder="Description" required></textarea>
+                <button type="submit">Save</button>
+            </form>
         </div>
-        <div class="img-card">
-            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
-            <p>Receiving an award</p>
+
+        <!-- Task List Panel -->
+        <div class="task-list-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="taskList">
+                    <!-- Tasks will appear here -->
+                </tbody>
+            </table>
         </div>
-        <div class="img-card">
-            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
-            <p>With family and friends</p>
-        </div>
-    </section>
+    </div>
 
-    <!-- Tribute Text -->
-    <section class="tribute-text">
-        <h2>Why I Admire Steve Jobs</h2>
-       <p>
-        
-        Steve Jobs inspires me with his vision, innovation, and perseverance. As the co-founder of Apple, he revolutionized
-        technology by creating products that combined functionality with beauty, such as the iPhone, iPad, and Mac. His ability
-        to think differently and challenge the status quo made him one of the most influential entrepreneurs in history.
-        </p>
-        <p>Beyond their professional success, their kindness and empathy make them a role model for everyone. Their
-            words and actions motivate me to pursue my dreams.</p>
-    </section>
-
-    <!-- Favorite Quotes -->
-    <section class="quotes">
-        <h2>Inspirational Quotes</h2>
-        <blockquote>“Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe
-        is great work. And the only way to do great work is to love what you do.”</blockquote>
-        <blockquote>“Stay hungry, stay foolish.”</blockquote>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Created with ❤️ by Harshal Honade</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
