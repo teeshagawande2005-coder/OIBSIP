@@ -1,230 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Calculator</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #333;
-        }
-        .calculator {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 450px;
-            width: 100%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .calculator::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800);
-        }
-        h1 {
-            margin-bottom: 30px;
-            color: #4CAF50;
-            font-weight: 300;
-            font-size: 2em;
-        }
-        .display {
-            background: #f9f9f9;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            font-size: 24px;
-            font-weight: 500;
-            text-align: right;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            overflow: hidden;
-        }
-        .buttons {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
-        }
-        button {
-            background: #f0f0f0;
-            border: none;
-            border-radius: 12px;
-            padding: 18px;
-            font-size: 16px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        button:hover {
-            background: #e0e0e0;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-        .operator {
-            background: #4CAF50;
-            color: white;
-        }
-        .operator:hover {
-            background: #45a049;
-        }
-        .clear {
-            background: #f44336;
-            color: white;
-        }
-        .clear:hover {
-            background: #d32f2f;
-        }
-        .equals {
-            background: #2196F3;
-            color: white;
-            grid-column: span 2;
-        }
-        .equals:hover {
-            background: #1976D2;
-        }
-        .zero {
-            grid-column: span 2;
-        }
-        .special {
-            background: #FF9800;
-            color: white;
-        }
-        .special:hover {
-            background: #F57C00;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #777;
-        }
-        @media (max-width: 480px) {
-            .calculator {
-                padding: 20px;
-                margin: 20px;
-            }
-            h1 {
-                font-size: 1.5em;
-            }
-            .display {
-                font-size: 20px;
-                padding: 15px;
-            }
-            button {
-                padding: 12px;
-                font-size: 14px;
-            }
-        }
-    </style>
+    <title>Tribute to [Person's Name]</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="calculator">
-        <h1><i class="fas fa-calculator"></i> Advanced Calculator</h1>
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <button class="clear" id="clear">AC</button>
-            <button class="special" id="backspace"><i class="fas fa-backspace"></i></button>
-            <button class="special" id="percent">%</button>
-            <button class="special" id="sqrt">√</button>
-            <button class="operator" id="divide">/</button>
-            <button id="seven">7</button>
-            <button id="eight">8</button>
-            <button id="nine">9</button>
-            <button class="operator" id="multiply">*</button>
-            <button class="special" id="openParen">(</button>
-            <button id="four">4</button>
-            <button id="five">5</button>
-            <button id="six">6</button>
-            <button class="operator" id="subtract">-</button>
-            <button class="special" id="closeParen">)</button>
-            <button id="one">1</button>
-            <button id="two">2</button>
-            <button id="three">3</button>
-            <button class="operator" id="add">+</button>
-            <button class="equals" id="equals">=</button>
-            <button class="zero" id="zero">0</button>
-            <button id="decimal">.</button>
+    <!-- Header -->
+    <header>
+        <h1>Tribute to Steve Jobs</h1>
+        <p>Celebrating the life and achievements of someone truly inspiring</p>
+    </header>
+
+    <!-- Image Gallery -->
+    <section class="gallery">
+        <div class="img-card">
+            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
+            <p>At an event in 2023</p>
         </div>
-        <div class="footer">
-            <p>Perform advanced calculations with ease.</p>
+        <div class="img-card">
+            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
+            <p>Receiving an award</p>
         </div>
-    </div>
+        <div class="img-card">
+            <img src="https://d7hftxdivxxvm.cloudfront.net/?height=1920&quality=80&resize_to=fit&src=https%3A%2F%2Fd32dm0rphc51dk.cloudfront.net%2FrvWrAmsQH1Am8i6xAn5-QQ%2Flarge.jpg&width=1647300x200" alt="[Person's Name]">
+            <p>With family and friends</p>
+        </div>
+    </section>
 
-    <script>
-        let display = document.getElementById('display');
-        let currentInput = '0';
-        let expression = '';
+    <!-- Tribute Text -->
+    <section class="tribute-text">
+        <h2>Why I Admire Steve Jobs</h2>
+       <p>
+        
+        Steve Jobs inspires me with his vision, innovation, and perseverance. As the co-founder of Apple, he revolutionized
+        technology by creating products that combined functionality with beauty, such as the iPhone, iPad, and Mac. His ability
+        to think differently and challenge the status quo made him one of the most influential entrepreneurs in history.
+        </p>
+        <p>Beyond their professional success, their kindness and empathy make them a role model for everyone. Their
+            words and actions motivate me to pursue my dreams.</p>
+    </section>
 
-        // Function to update display
-        function updateDisplay() {
-            display.textContent = currentInput;
-        }
+    <!-- Favorite Quotes -->
+    <section class="quotes">
+        <h2>Inspirational Quotes</h2>
+        <blockquote>“Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe
+        is great work. And the only way to do great work is to love what you do.”</blockquote>
+        <blockquote>“Stay hungry, stay foolish.”</blockquote>
+    </section>
 
-        // Function to handle button clicks
-        function handleButton(value) {
-            if (value === 'AC') {
-                currentInput = '0';
-                expression = '';
-            } else if (value === '<i class="fas fa-backspace"></i>') {
-                currentInput = currentInput.slice(0, -1);
-                if (currentInput === '') currentInput = '0';
-            } else if (value === '=') {
-                try {
-                    // Replace √ with Math.sqrt
-                    let expr = expression + currentInput;
-                    expr = expr.replace(/√/g, 'Math.sqrt');
-                    expr = expr.replace(/%/g, '/100');
-                    currentInput = eval(expr).toString();
-                    expression = '';
-                } catch {
-                    currentInput = 'Error';
-                }
-            } else {
-                if (currentInput === '0' && !isNaN(value)) {
-                    currentInput = value;
-                } else {
-                    currentInput += value;
-                }
-                if (['+', '-', '*', '/', '%', '√', '(', ')'].includes(value)) {
-                    expression += currentInput.slice(0, -1) + value;
-                    currentInput = '';
-                }
-            }
-            updateDisplay();
-        }
-
-        // Event listeners for all buttons
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                handleButton(button.textContent || button.innerHTML);
-            });
-        });
-    </script>
+    <!-- Footer -->
+    <footer>
+        <p>Created with ❤️ by Harshal Honade</p>
+    </footer>
 </body>
+
 </html>

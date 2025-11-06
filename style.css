@@ -1,0 +1,122 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f6fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+/* Image Gallery */
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.img-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 300px;
+    text-align: center;
+}
+
+.img-card img {
+    width: 100%;
+    display: block;
+}
+
+.img-card p {
+    padding: 10px;
+    font-weight: bold;
+    color: #2575fc;
+}
+
+.img-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Tribute Text */
+.tribute-text {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tribute-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: #2575fc;
+    margin-bottom: 20px;
+}
+
+.tribute-text p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* Quotes Section */
+.quotes {
+    background-color: #e0f7fa;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.quotes h2 {
+    font-family: 'Playfair Display', serif;
+    color: #006064;
+    margin-bottom: 20px;
+}
+
+.quotes blockquote {
+    font-style: italic;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    border-left: 5px solid #006064;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2575fc;
+    color: white;
+    border-radius: 10px;
+    font-size: 1em;
+}
